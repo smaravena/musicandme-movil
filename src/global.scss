@@ -44,4 +44,13 @@ ion-title {
       height: 0;
       text-align: center;
     }
-  }
+  };
+ion-card {
+    --background: #000;
+};  
+ion-card-title {
+    --color: #fff70ae4;
+  };
+ion-card-subtitle {
+    --color: #fff70ae4;
+  };
