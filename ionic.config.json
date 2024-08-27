@@ -1,0 +1,7 @@
+{
+  "name": "musicandme-movil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
