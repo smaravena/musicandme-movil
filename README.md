@@ -2,7 +2,7 @@
 - ionic 7
 - npm
 
-## Usage
+## usage
 ```bash
 npm i
 ionic serve
