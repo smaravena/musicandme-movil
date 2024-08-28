@@ -54,3 +54,11 @@ ion-card-title {
 ion-card-subtitle {
     --color: #fff70ae4;
   };
+.card-img{
+    width:300px;
+    height: 300px;
+}
+.custom-card {
+  max-width: 300px; /* Define el ancho máximo de la carta */
+  margin: 20 auto; /* Centra la carta horizontalmente */
+}
