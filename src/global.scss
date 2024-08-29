@@ -49,11 +49,14 @@ ion-card {
     --background: #000;
 };  
 ion-card-title {
-    --color: #fff70ae4;
+    --color: #ffc409;
   };
 ion-card-subtitle {
-    --color: #fff70ae4;
+    --color: #ffc409;
   };
+ion-card-content{
+  color:white;
+};
 .card-img{
     width:300px;
     height: 300px;
@@ -73,3 +76,9 @@ ion-card-subtitle {
   flex-direction: column;
   align-items: center;
 }
+ion-tab-bar{
+  --background:#ffc409;
+};
+ion-tab-button{
+  color: black;
+};
