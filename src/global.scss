@@ -62,3 +62,8 @@ ion-card-subtitle {
   max-width: 300px; /* Define el ancho máximo de la carta */
   margin: 20 auto; /* Centra la carta horizontalmente */
 }
+.card-container{
+  display: flex;
+  flex-direction: column; /*Alineacion de cartas verticalmente */
+  align-items: center; /*centrar cartas */
+}
