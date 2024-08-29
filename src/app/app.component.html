@@ -1,3 +1,20 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-router-outlet>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="perfil">
+          <ion-icon name="person-circle-outline"></ion-icon>
+          Perfil
+        </ion-tab-button>
+        <ion-tab-button tab="home">
+          <ion-icon name="home-outline"></ion-icon>
+          Rentas
+        </ion-tab-button>
+        <ion-tab-button tab="qr-usuario">
+          <ion-icon name="camera-outline"></ion-icon>
+          QR
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-router-outlet>
 </ion-app>
