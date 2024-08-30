@@ -7,39 +7,18 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div class="card-container">
-    <!-- CARD, RENTAS ACTIVAS? -->
-    <ion-card class="custom-card">
-      <img alt="album-img" src="../../../assets/images/cover_older_alt.jpg" class="card-img"/>
-      <ion-card-header>
-        <ion-card-title>Older</ion-card-title>
-        <ion-card-subtitle>George Michael</ion-card-subtitle>
-      </ion-card-header>
-    
-      <ion-card-content>
-        un disco de todos los tiempos :O
-      </ion-card-content>
-    </ion-card>
-    
-    <ion-card class="custom-card">
-      <img alt="album-img" src="../../../assets/images/cover_thriller.png" class="card-img"/>
-      <ion-card-header>
-        <ion-card-title>Thriller</ion-card-title>
-        <ion-card-subtitle>Michael Jackson</ion-card-subtitle>
-      </ion-card-header>
-    
-      <ion-card-content>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. In quas ipsum molestias aliquam perspiciatis ea aspernatur veritatis, debitis obcaecati beatae dicta alias unde exercitationem illo, quo praesentium reprehenderit! Distinctio, eveniet!
-      </ion-card-content>
-    </ion-card>
-  </div>
-
+ 
   <!-- ITEMS RENTA -->
-  <ion-item button detail="true" id="open-modal" expand="block">
-      <img slot="start" alt="album-img" src="../../../assets/images/cover_thriller.png" style="height: 50px; width: 50px;"/>
-      <ion-label>Thriller</ion-label>
-      <ion-label color="medium">Fin: Enero-14</ion-label>
+  <ion-item button detail="true" id="older" expand="block">
+      <img slot="start" alt="album-img" src="../../../assets/images/cover_older_alt.jpg" style="height: 50px; width: 50px;"/>
+      <ion-label>Older</ion-label>
+      <ion-label color="medium">Fin: Febrero-30</ion-label>
   </ion-item>
+  <ion-item button detail="true" id="open-modal" expand="block">
+    <img slot="start" alt="album-img" src="../../../assets/images/cover_thriller.png" style="height: 50px; width: 50px;"/>
+    <ion-label>Thriller</ion-label>
+    <ion-label color="medium">Fin: Enero-14</ion-label>
+</ion-item>
   <!-- MODAL QUE ABRE ITEM RENTA -->
   <ion-modal trigger="open-modal">
     <ng-template>
@@ -56,7 +35,50 @@
       </ion-header>
       <ion-content class="ion-padding">
         <ion-item>
-          <p>TEXTO TEST</p>
+          <!--CARTA PARA MODAL-->
+          <ion-card class="custom-card">
+            <img alt="album-img" src="../../../assets/images/cover_thriller.png" class="card-img"/>
+            <ion-card-header>
+              <ion-card-title>Thriller</ion-card-title>
+              <ion-card-subtitle>Michael Jackson</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              A
+            </ion-card-content>
+          </ion-card>
+          <!-- FIN CARTA MODAL-->
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <!--Modal 2-->
+  <ion-modal trigger="older">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Detalles</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <!--CARTA PARA MODAL-->
+          <ion-card class="custom-card">
+            <img alt="album-img" src="../../../assets/images/cover_older_alt.jpg" class="card-img"/>
+            <ion-card-header>
+              <ion-card-title>Older</ion-card-title>
+              <ion-card-subtitle>George Michael</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              A
+            </ion-card-content>
+          </ion-card>
+          <!-- FIN CARTA MODAL-->
         </ion-item>
       </ion-content>
     </ng-template>
