@@ -6,10 +6,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <div class="card-container">
     <!-- CARD, RENTAS ACTIVAS? -->
-    <ion-card class="custom-card" >
+    <ion-card class="custom-card">
       <img alt="album-img" src="../../../assets/images/cover_older_alt.jpg" class="card-img"/>
       <ion-card-header>
         <ion-card-title>Older</ion-card-title>
@@ -32,5 +32,33 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. In quas ipsum molestias aliquam perspiciatis ea aspernatur veritatis, debitis obcaecati beatae dicta alias unde exercitationem illo, quo praesentium reprehenderit! Distinctio, eveniet!
       </ion-card-content>
     </ion-card>
-</div>
+  </div>
+
+  <!-- ITEMS RENTA -->
+  <ion-item button detail="true" id="open-modal" expand="block">
+      <img slot="start" alt="album-img" src="../../../assets/images/cover_thriller.png" style="height: 50px; width: 50px;"/>
+      <ion-label>Thriller</ion-label>
+      <ion-label color="medium">Fin: Enero-14</ion-label>
+  </ion-item>
+  <!-- MODAL QUE ABRE ITEM RENTA -->
+  <ion-modal trigger="open-modal">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Detalles</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <p>TEXTO TEST</p>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
