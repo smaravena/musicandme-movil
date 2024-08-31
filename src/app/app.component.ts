@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(public toastController:ToastController) {}
+
+  temporal(){
+    this.presentToast("middle","POR IMPLEMENTAR");
+  }
+
+  async presentToast(position: 'top' | 'middle' | 'bottom', msg:string, duration?:number) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: duration?duration:2500,
+      position: position,
+    });
+
+    await toast.present();
+  }
 }
