@@ -13,6 +13,7 @@ export class LoginPage implements OnInit {
     usuario:"",
     password:"" 
   }
+  field: string="";
 
   constructor(public router:Router, public toastController:ToastController) { }
 
@@ -21,5 +22,16 @@ export class LoginPage implements OnInit {
 
   ingresar(){
     this.router.navigate(['/home']);
+    this.presentToast("bottom","Ok");
+  }
+
+  async presentToast(position: 'top' | 'middle' | 'bottom', msg:string, duration?:number) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: duration?duration:2500,
+      position: position,
+    });
+
+    await toast.present();
   }
 }
