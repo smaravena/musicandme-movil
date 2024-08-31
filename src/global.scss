@@ -45,13 +45,13 @@ ion-title {
       text-align: center;
     }
   };
-ion-card {
+.album-card {
     --background: #000;
 };  
-ion-card-title {
+.album-card-title {
     --color: #ffc409;
   };
-ion-card-subtitle {
+.album-card-subtitle {
     --color: #ffc409;
   };
 ion-card-content{
@@ -82,3 +82,10 @@ ion-tab-bar{
 ion-tab-button{
   color: black;
 };
+.login-card{
+  background: #ffc609b7;
+}
+.login-card-title{
+  color:black;
+  font:bold;
+}

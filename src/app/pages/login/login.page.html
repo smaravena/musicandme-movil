@@ -5,10 +5,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <img alt="login" src="https://www.drupal.org/files/project-images/Disable%20Login%20Page-Icon.png" />
+  <ion-card class="login-card">
+    <img class="login-image" alt="login" src="../../../assets/images/COM_1_-removebg-preview.png" />
     <ion-card-header>
-      <ion-card-title>Inicio de Sesión</ion-card-title>
+      <ion-card-title class="login-card-title">Inicio de Sesión</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
@@ -20,7 +20,7 @@
       </ion-item>
       <ion-row>
         <ion-col>
-          <ion-button expand="block" (click)="ingresar()">Ingresar</ion-button>
+          <ion-button color="dark" expand="block" (click)="ingresar()">Ingresar</ion-button>
         </ion-col>
       </ion-row>
     </ion-card-content>
