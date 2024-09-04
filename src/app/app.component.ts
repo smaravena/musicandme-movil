@@ -10,7 +10,7 @@ export class AppComponent {
   constructor(public toastController:ToastController) {}
 
   temporal(){
-    this.presentToast("middle","POR IMPLEMENTAR");
+    this.presentToast("middle","AÚN EN DESARROLLO");
   }
 
   async presentToast(position: 'top' | 'middle' | 'bottom', msg:string, duration?:number) {
