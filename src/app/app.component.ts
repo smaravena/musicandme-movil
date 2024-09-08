@@ -9,9 +9,6 @@ import { ToastController } from '@ionic/angular';
 export class AppComponent {
   constructor(public toastController:ToastController) {}
 
-  temporal(){
-    this.presentToast("middle","AÚN EN DESARROLLO");
-  }
 
   async presentToast(position: 'top' | 'middle' | 'bottom', msg:string, duration?:number) {
     const toast = await this.toastController.create({

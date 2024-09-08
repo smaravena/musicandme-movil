@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
      let navigationExtras : NavigationExtras={
       state:{login: this.login}
      };
-     this.router.navigate(['/perfil'],navigationExtras);
+     this.router.navigate(['/tabs/perfil'],navigationExtras);
     }else{
       this.presentToast("top","No se pudo validar: Falta "+this.field,5000);
     }
