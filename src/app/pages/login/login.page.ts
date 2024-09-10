@@ -86,4 +86,7 @@ export class LoginPage implements OnInit {
 
     await toast.present();
   }
+  ingresoRestablecer(){
+    this.router.navigate(['/restablecer'])
+  }
 }
