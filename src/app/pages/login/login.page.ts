@@ -42,10 +42,10 @@ export class LoginPage implements OnInit {
         this.shakeItem(this.usernameinput); //anim user
         this.shakeItem(this.passwordinput); // anim pass
       } else if (this.login.usuario === '') {
-        this.shakeItem(this.passwordinput); // anim pass
+        this.shakeItem(this.usernameinput); // anim user
       }
         else if (this.login.password === '') {
-          this.shakeItem(this.usernameinput); // anim user
+        this.shakeItem(this.passwordinput); // anim pass
       } 
     }
   }
@@ -68,7 +68,6 @@ export class LoginPage implements OnInit {
       .addElement(field.nativeElement)
       .duration(500)
       .keyframes([
-        { offset: 0, transform: 'translateX(0)' },
         { offset: 0.3, transform: 'translateX(-5px)' }, // izquierda
         { offset: 0.6, transform: 'translateX(15px)' }, // derecha
         { offset: 1, transform: 'translateX(0)' }, // volver
