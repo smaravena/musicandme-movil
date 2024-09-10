@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { ToastController, AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -15,11 +15,18 @@ export class LoginPage implements OnInit {
   }
   field: string="";
 
-  constructor(public router:Router, public toastController:ToastController) { }
+  @ViewChild('usernameinput', { read: ElementRef }) usernameinput!: ElementRef;
+  @ViewChild('passwordinput', { read: ElementRef }) passwordinput!: ElementRef;
+
+  constructor(
+    public router: Router,
+    public toastController: ToastController,
+    private animationCtrl: AnimationController
+  ) {}
 
   ngOnInit() {
   }
-
+  
   ingresar(){
     if(this.validateModel(this.login)){
      this.presentToast("top","¡Que alegria volver a verte!")
@@ -30,8 +37,19 @@ export class LoginPage implements OnInit {
      this.router.navigate(['/tabs/perfil'],navigationExtras);
     }else{
       this.presentToast("top","No se pudo validar: Falta "+this.field,5000);
+      // TODO: mejorar logica al comprobar campos, realizar en metodo animacion?
+      if (this.login.usuario === '' && this.login.password === '') {
+        this.shakeItem(this.usernameinput); //anim user
+        this.shakeItem(this.passwordinput); // anim pass
+      } else if (this.login.usuario === '') {
+        this.shakeItem(this.passwordinput); // anim pass
+      }
+        else if (this.login.password === '') {
+          this.shakeItem(this.usernameinput); // anim user
+      } 
     }
   }
+
   //Creacion de validateModel, para validar el ingreso del login
   validateModel(model:any){
     for(var[key,value] of Object.entries(model)){
@@ -43,6 +61,22 @@ export class LoginPage implements OnInit {
     }
     return true;
   }
+
+  shakeItem(field: ElementRef) {
+    const animation = this.animationCtrl
+      .create()
+      .addElement(field.nativeElement)
+      .duration(500)
+      .keyframes([
+        { offset: 0, transform: 'translateX(0)' },
+        { offset: 0.3, transform: 'translateX(-5px)' }, // izquierda
+        { offset: 0.6, transform: 'translateX(15px)' }, // derecha
+        { offset: 1, transform: 'translateX(0)' }, // volver
+      ]);
+
+    animation.play();
+  }
+
   async presentToast(position: 'top' | 'middle' | 'bottom', msg:string, duration?:number) {
     const toast = await this.toastController.create({
       message: msg,
