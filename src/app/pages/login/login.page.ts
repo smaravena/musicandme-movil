@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastController, AnimationController } from '@ionic/angular';
+import { AuthService } from '../../services/auth.service'; // SERVICE AUTH
 
 @Component({
   selector: 'app-login',
@@ -21,23 +22,25 @@ export class LoginPage implements OnInit {
   constructor(
     public router: Router,
     public toastController: ToastController,
-    private animationCtrl: AnimationController
+    private animationCtrl: AnimationController,
+    private authService: AuthService //AUTH SERVICE NECESARIO GUARD
   ) {}
 
-  ngOnInit() {
-  }
-  
-  ingresar(){
-    if(this.validateModel(this.login)){
-     this.presentToast("top","¡Que alegria volver a verte!")
-     //Creacion para el traspaso de parametros a otras pages
-     let navigationExtras : NavigationExtras={
-      state:{login: this.login}
-     };
-     this.router.navigate(['/tabs/perfil'],navigationExtras);
-    }else{
-      this.presentToast("top","No se pudo validar: Falta "+this.field,5000);
-      // TODO: mejorar logica al comprobar campos, realizar en metodo animacion?
+  ngOnInit() {}
+
+  ingresar() {
+    if (this.validateModel(this.login)) {
+      const token = '1234567890abcdef'; //TOKEN CUALQUIERA, CAMBIAR A FUTURO
+      this.authService.login(token); //GUARDAR TOKEN EN LOCALSTORAGE
+
+      this.presentToast('top', '¡Qué alegría volver a verte!');
+      let navigationExtras: NavigationExtras = {
+        state: { login: this.login },
+      };
+      this.router.navigate(['/tabs/perfil'], navigationExtras);
+    } else {
+      this.presentToast('top', 'No se pudo validar: Falta ' + this.field, 5000);
+      //MEJORAR LOGICA VALIDAR ANIMACION
       if (this.login.usuario === '' && this.login.password === '') {
         this.shakeItem(this.usernameinput); //anim user
         this.shakeItem(this.passwordinput); // anim pass
