@@ -1,0 +1,31 @@
+.not-found-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+  
+    .error-icon {
+      font-size: 10rem; /*ICON SIZE*/
+      margin-bottom: 20px;
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #ff0000;
+    }
+  
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+  
+    .subtext {
+      color: gray;
+      font-size: 1rem;
+      margin-top: 0;
+    }
+  }
+  

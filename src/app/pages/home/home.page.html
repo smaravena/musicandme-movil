@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-title>
+      Rentas activas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- ITEMS RENTA -->
+  <ion-item button detail="true" id="open-modal-older" expand="block">
+    <img slot="start" alt="album-img" src="../../../assets/images/cover_older_alt.jpg" style="height: 50px; width: 50px;"/>
+    <ion-label>Older</ion-label>
+    <ion-label color="medium">Fin: Febrero-30</ion-label>
+  </ion-item>
+
+  <ion-item button detail="true" id="open-modal-thriller" expand="block">
+    <img slot="start" alt="album-img" src="../../../assets/images/cover_thriller.png" style="height: 50px; width: 50px;"/>
+    <ion-label>Thriller</ion-label>
+    <ion-label color="medium">Fin: Enero-14</ion-label>
+</ion-item>
+  <!-- MODAL ITEM RENTA -->
+  <ion-modal trigger="open-modal-thriller">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-icon name="arrow-back-outline" (click)="cancel()"></ion-icon>
+            <ion-button (click)="cancel()">Volver</ion-button>
+          </ion-buttons>
+          <ion-title>Detalles</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <!--CARTA PARA MODAL-->
+          <ion-card class="custom-card" class="album-card">
+            <img alt="album-img" src="../../../assets/images/cover_thriller.png" class="card-img"/>
+            <ion-card-header>
+              <ion-card-title class="album-card-title">Thriller</ion-card-title>
+              <ion-card-subtitle class="album-card-subtitle">Michael Jackson</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              A
+            </ion-card-content>
+          </ion-card>
+          <!-- FIN CARTA MODAL-->
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <!-- MODAL 2 -->
+  <ion-modal trigger="open-modal-older">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-icon name="arrow-back-outline" (click)="cancel()"></ion-icon>
+            <ion-button (click)="cancel()">Volver</ion-button>
+          </ion-buttons>
+          <ion-title>Detalles</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <!--CARTA PARA MODAL-->
+          <ion-card class="custom-card" class="album-card">
+            <img alt="album-img" src="../../../assets/images/cover_older_alt.jpg" class="card-img"/>
+            <ion-card-header>
+              <ion-card-title class="album-card-title">Older</ion-card-title>
+              <ion-card-subtitle class="album-card-subtitle">George Michael</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              A
+            </ion-card-content>
+          </ion-card>
+          <!-- FIN CARTA MODAL-->
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>restablecer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Restablecer</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card class="login-card">
+    <img class="login-image" alt="login" src="../../../assets/images/COM_1_-removebg-preview.png" />
+    <ion-card-header>
+      <ion-card-title class="login-card-title">Restablecer Contraseña</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input [(ngModel)]="email" label="Ingrese Correo electronico" labelPlacement="floating" type="email"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button  color="dark" (click)="restContra()" expand="block">Restablecer Contraseña</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

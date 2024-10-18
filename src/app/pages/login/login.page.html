@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="login-card">
+    <img class="login-image" alt="login" src="../../../assets/images/COM_1_-removebg-preview.png" />
+    <ion-card-header>
+      <ion-card-title class="login-card-title">Inicio de Sesión</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item #usernameinput>
+        <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="login.usuario"></ion-input>
+      </ion-item>
+      <ion-item #passwordinput>
+        <ion-input label="Contraseña" labelPlacement="floating" type="password" [(ngModel)]="login.password"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button color="dark" expand="block" (click)="ingresar()">Ingresar</ion-button>
+          <ion-button color="dark" expand="block" (click)="ingresoRestablecer()">Restablecer Contraseña</ion-button>
+          <ion-button color="dark" expand="block" (click)="ingresoRestablecer()">Restablecer Contraseña</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
