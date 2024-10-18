@@ -7,7 +7,7 @@ import { ToastController, AnimationController } from '@ionic/angular';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage  {
   //CREDENCIALES USUARIO LOGIN PAGE
   login:any={
     usuario:"",
@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
     private animationCtrl: AnimationController,
   ) {}
 
-  ngOnInit() {}
+
 
   ingresar() {
     if (this.validateModel(this.login)) {
