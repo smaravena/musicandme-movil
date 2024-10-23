@@ -31,6 +31,9 @@ log.txt
 
 # Node
 /node_modules
+# OVERRIDE IMPLEMENTATION BARCODESCANNER.GRADLE
+!node_modules/phonegap-plugin-barcodescanner/src/android/barcodescanner.gradle
+
 npm-debug.log
 yarn-error.log
 
